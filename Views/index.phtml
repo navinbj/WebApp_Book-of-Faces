@@ -1,0 +1,57 @@
+<?php require_once ('templates/head.phtml') ?>
+<input class="form-control search" type="text" onkeyup="showHint(this.value)" placeholder="Search...">
+<br>
+<div class="profiles" id="sugar"><?php
+    foreach ($view->users as $user)
+    {
+        $image = $user->getImage();
+        $name = $user->getName();
+        $age = $user->getAge();
+        $jobTitle = $user->getJobTitle();
+        $id = $user->getUserid();
+        $a1 = $user->getQ1();
+        $a2 = $user->getQ2();
+        $a3 = $user->getQ3();
+        $a4 = $user->getQ4();
+        $a5 = $user->getQ5();
+
+                            echo <<< ETO
+
+                            <div class='col-md-4 col profile'>
+                                <div class="dropdown">
+                                
+ETO;
+                            if($_SESSION['role'] === "admin")
+                            {
+                            echo <<< ETO
+                                  <div class="dropdown-content">
+                                    <form action='index.php' method="POST" class="admincontrolform">
+                                        <button type="submit" name="deleteUser" value="$id" onclick="return confirmDelete();"><span class="glyphicon glyphicon-trash iconcolour"></span></button>
+                                    </form>
+                                    <form action='edituser.php' method="POST" class="admincontrolform">
+                                        <button type="submit" name="editUserButton" value="$id" style="float:right;"><span class="glyphicon glyphicon-pencil iconcolour"></span></button>
+                                    </form>
+                                  </div>
+                                  
+ETO;
+                            }
+                            echo <<< ETO
+                                  <div class="profile-image" onclick="showDetails(this, '$a1', '$a2', '$a3', '$a4', '$a5', '$image')">
+                                    <img class='img' src='$image' alt='profile picture'>
+                                   </div>
+                                </div>
+                                
+                               
+                                <br>
+                                <div class='profile-text'>
+                                <b>NAME: </b>$name
+                                <br><b>AGE: </b> $age
+                                <br><b>JOB TITLE: </b>$jobTitle
+                                <p class='bottom-border'></p>
+                                </div>
+                            </div>
+ETO;
+                        }
+                        ?>
+                    </div>
+<?php require_once ('templates/footer.phtml') ?>

@@ -1,0 +1,16 @@
+<?php
+// Checks if the user who is signed in is an admin.
+if ($_SESSION['role'] === 'admin')
+{
+    // Displays the "Add Staff" link.
+    echo '<li id="addUser" class="filter"><a href="/adduser.php">ADD STAFF</a></li>';
+}
+// Displays the 'All filter'
+echo '<li class="filter"><a href="/index.php">All</a></li>';
+/*Adds the department filters to the navbar. */
+foreach ($view->departments as $department)
+{
+    // Displays a filter for each of the departments.
+    echo '<li class="filter"><a href="../../index.php?departmentId='.$department->getID().'">'.$department->getName().'</a></li>';
+}
+echo '<li id="logoutButton" class="filter"><a href="/index.php?logout=true">Logout</a></li>';

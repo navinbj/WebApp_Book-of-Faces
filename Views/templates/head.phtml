@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Book Of Faces</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/my-styles2.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../../js/previewImage.js"></script>
+  <script src="js/searchUser.js"></script>
+
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+
+    /*Setting hight of body container, parent of navbar/
+    prevents navbar from being squashed
+    */
+     body
+     {
+        height: 900px;
+     }
+    /*div.col-sm-2.sidenav{*/
+        /*padding-left: 15px;*/
+    /*}*/
+
+  </style>
+
+</head>
+<body>
+
+
+<!--<div class="container-fluid">-->
+<!--  <div class="row content">-->
+
+    <div class="col-sm-2 sidenav">
+      <ul class="nav nav-pills nav-stacked">
+        <!-- Navbar col-2-->
+          <?php require_once('Views/templates/navbar.phtml') ?>
+      </ul>
+    </div>
+    <!-- Profile col- 10-->
+    <div class="col-sm-10 content">
+        <!-- search bar col-12-->
+        <div class="col-sm-12 contentArea">

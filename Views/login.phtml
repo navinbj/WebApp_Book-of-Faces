@@ -1,0 +1,18 @@
+<?php require('Views/templates/logheader.phtml');?>
+<div id="wrapper">
+    <div id="outer">
+        <div id="content">
+            <p id="title">LOGIN</p>
+            <form method="post">
+                <label for="loginEmail">EMAIL ADDRESS <?php echo $view->erremail;?></label>
+                <input required type="email" id="loginEmail" name="loginEmail" placeholder="YOUR EMAIL ADDRESS...">
+                <label for="loginPassword">PASSWORD<?php echo $view->errpassword;?></label>
+                <input required type="password" id="loginEmail" name="loginPassword" placeholder="ENTER VALID PASSWORD...">
+                <button id="loginButton" type="submit" name="loginButton">LOGIN</button>
+            </form>
+            <p id="forgotPassword">I FORGOT MY <a href="../forgotpassword.php">PASSWORD</a></p>
+        </div>
+        <img id="logo" src="../images/competa_logo_wit.svg" />
+    </div>
+</div>
+

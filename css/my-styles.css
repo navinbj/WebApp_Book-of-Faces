@@ -1,0 +1,153 @@
+@font-face {
+    font-family: Helvetica-Bold;
+    src: url("../images/helvetica-bold-587620e15fbcb.ttf");
+}
+@font-face {
+    font-family: Helvetica-Light;
+    src: url("../images/helvetica-light-587623f3b548a.ttf");
+}
+#wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../images/background.png");
+}
+#outer {
+    display: table-cell;
+    vertical-align: middle;
+}
+#content {
+    background-color: #ffffff;
+    height: 70%;
+    width: 50%;
+    margin: auto;
+    min-height: 500px;
+    min-width: 350px;
+    max-height: 500px;
+    max-width: 650px;
+}
+#title {
+    font-family: "Helvetica-Bold";
+    font-size: 32px;
+    color: #46464F;
+    padding-top: 5%;
+    padding-left: 10%;
+}
+label {
+    display: block;
+    padding-left: 10%;
+    font-family: Helvetica-Light;
+    font-size: 20px;
+    color: #46464F;
+    margin-bottom: 5px;
+}
+input {
+    -webkit-appearance: none;
+    outline: none;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    border-radius: 0;
+    border: solid;
+    border-width: 1px;
+    height: 60px;
+    width: 80%;
+    border-color: #999999;
+    padding-left: 20px;
+}
+#loginButton {
+    margin-top: 3%;
+    margin-bottom: 4%;
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 0;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    height: 60px;
+    background-color: #D7342B;
+    color: #ffffff;
+    font-family: Helvetica-Bold;
+    cursor: pointer;
+    cursor: hand;
+}
+#passwordButton{
+    margin-top: 3%;
+    margin-bottom: 4%;
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 0;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    height: 60px;
+    background-color: #D7342B;
+    color: #ffffff;
+    font-family: Helvetica-Bold;
+    cursor: pointer;
+    cursor: hand;
+}
+
+#forgotPassword {
+    margin-left: 10%;
+    color: #46464F;
+    font-family: Helvetica-Bold;
+    font-size: 12px;
+}
+#forgotPassword a {
+    color: #D7342B;
+}
+::-webkit-input-placeholder {
+    color: #999999;
+}
+/* Firefox 18- */
+:-moz-placeholder {
+    color: #999999;
+}
+/* Firefox 19+ */
+::-moz-placeholder {
+    color: #999999;
+    font-family: Helvetica-Light;
+    text-indent: 10px;
+}
+:-ms-input-placeholder {
+    color: red;
+}
+#logo {
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+    height: 15%;
+    width: 15%;
+}
+.errorMessage {
+    font-size: 14px;
+}
+
+/*Set password - Hani*/
+
+#welcome , #pleaseSet{
+    font-family: 'myFont', Helvetica-Light, sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 10%;
+    margin-bottom: -5px;
+}
+
+#password , #confirmpassword{
+    -webkit-appearance: none;
+    outline: none;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    border-radius: 0;
+    border: solid;
+    border-width: 1px;
+    height: 60px;
+    width: 80%;
+    border-color: #999999;
+    padding-left: 20px;
+}
+
+

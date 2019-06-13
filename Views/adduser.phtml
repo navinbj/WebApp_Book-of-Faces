@@ -1,0 +1,77 @@
+    <?php require_once('templates/head.phtml') ?>
+<link rel='stylesheet' type='text/css' href='/css/editprofile.css'/>
+<!--Hani's modified Code for add user starts-->
+
+<!--        <div class="content">-->
+            <form action="../adduser.php" method="post" enctype="multipart/form-data">
+            <div class="row"> 
+                <div class="col-sm-6">
+                    <div class="userInfo">
+                        <label for="name">NAME:<?php echo $view->errname ;?></label>
+                        <input type="text" name="name" class="form-control" id="name" value="<?php echo $_POST['name'] ?>">
+
+                        <label for="email">EMAIL:<?php echo $view->erremail ;?></label>
+                        <input type="text" name="email" class="form-control" id="email" value="<?php echo $_POST['email'] ?>">
+
+                        <label for="age">AGE:<?php echo $view->errage ;?></label>
+                        <input type="text" name="age" class="form-control" id="age" value="<?php echo $_POST['age'] ?>">
+
+                        <label for="job">JOB TITLE:<?php echo $view->errjob ;?></label>
+                        <input type="text" name="job" class="form-control" id="job" value="<?php echo $_POST['job'] ?>">
+
+                        <label for="department">DEPARTMENT:<?php echo $view->errdepartment;?></label>
+                            <?php
+                                foreach ($view->departments as $department) {
+                                    echo '<div class="checkbox">';
+                                        echo '<label><input type="checkbox" name="departments[]"  value="'. $department->getID().'">'. $department->getName() .'</label>';
+                                    echo '</div>';
+                                }
+                            ?>
+                    </div>
+
+                    <div class="questions">
+                        <label for="q1">The last thing i've Googled is:<?php echo $view->errq1 ;?></label>
+                        <input type="text" class="form-control" name="q1" id="q1" value="<?php echo $_POST['q1'] ?>">
+
+                        <label for="q2">I would like to be the best in:<?php echo $view->errq2 ;?></label>
+                        <input type="text" class="form-control" name="q2" id="q2" value="<?php echo $_POST['q2'] ?>">
+
+
+                        <label for="q3">My favourite game,film or series is:<?php echo $view->errq3 ;?></label>
+                        <input type="text" class="form-control" name="q3" id="q3" value="<?php echo $_POST['q3'] ?>">
+
+                        <label for="q4">My biggest failure I'd like to share is:<?php echo $view->errq4 ;?></label>
+                        <input type="text" class="form-control" name="q4" id="q4" value="<?php echo $_POST['q4'] ?>">
+
+                        <label for="q5">If I could be any person I would be:<?php echo $view->errq5 ;?></label>
+                        <input type="text" class="form-control" name="q5" id="q5" value="<?php echo $_POST['q5'] ?>">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="profilePic">
+                        <img class="imagePreview" id="preview" src="/images/default_avatar.jpg"/>
+                        <p>ADD PICTURE <?php echo $view->errUpload; ?>
+                            <input type="file" name="fileToUpload" id="fileUpload" onchange="previewImage(this);">
+                            <input id="addUser" class="btn btn-block btn-large btn-success  green_btn"
+                                   type="submit" value="ADD" name="adduser">
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            </form>
+
+<!--        </div>-->
+
+
+<!--Hani's modified code for add user ends-->
+
+
+<?php require_once('templates/footer.phtml') ?>
+
+
+
+
+
+
+

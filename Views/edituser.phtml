@@ -1,0 +1,82 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Navin
+ * Date: 14/01/2017
+ * Time: 18:00
+ */
+?>
+
+<?php require_once('templates/head.phtml') ?>
+<link rel='stylesheet' type='text/css' href='/css/editprofile.css'/>
+<!--Navin's modified Code for add user starts-->
+<!--        <div class="content">-->
+<form action="edituser.php" method="post" enctype="multipart/form-data">
+    <div class="col-sm-6">
+        <div class="userInfo">
+
+            <!--SEND THE ID AS A HIDDEN FIELD-->
+            <input type="hidden" name="id" value="<?php echo $view->id ?>">
+
+            <label for="name">NAME:<?php echo $view->errname ;?></label>
+            <input type="text" name="name" class="form-control" id="name" value="<?php echo $view->name ?>" required>
+            <label for="age">AGE:<?php echo $view->errage ;?></label>
+            <input type="text" name="age" class="form-control" id="age" value="<?php echo $view->age ?>" required>
+            <label for="job">JOB TITLE:<?php echo $view->errjob ;?></label>
+            <input type="text" name="jobTitle" class="form-control" id="job" value="<?php echo $view->jobTitle ?>" required>
+            <label for="department">DEPARTMENT:<?php echo $view->errdepartment;?></label><?php
+
+            //store user's deparments in array
+            $idArray = array();
+            foreach ($view->userDepartments as $userDepartment)
+            {
+                array_push($idArray, $userDepartment->getDepartmentid());
+            }
+
+            //check if user is already in a department
+            foreach ($view->departments as $department)
+            {
+
+                if (in_array($department->getID(), $idArray))
+                {
+                    echo '<div class="checkbox">';
+                    echo '<label><input type="checkbox" checked name="departments[]"  value="'. $department->getID().'">'. $department->getName() .'</label>';
+                    echo '</div>';
+                }
+                else
+                {
+                    echo '<div class="checkbox">';
+                    echo '<label><input type="checkbox" name="departments[]"  value="'. $department->getID().'">'. $department->getName() .'</label>';
+                    echo '</div>';
+                }
+            }
+            ?>
+        </div>
+        <div class="questions">
+            <label for="q1">The last thing i've Googled is:<?php echo $view->errq1 ;?></label>
+            <input type="text" class="form-control" name="q1" id="q1" value="<?php echo $view->q1 ?>">
+            <label for="q2">I would like to be the best in:<?php echo $view->errq2 ;?></label>
+            <input type="text" class="form-control" name="q2" id="q2" value="<?php echo $view->q2 ?>">
+            <label for="q3">My favourite game,film or series is:<?php echo $view->errq3 ;?></label>
+            <input type="text" class="form-control" name="q3" id="q3" value="<?php echo $view->q3 ?>">
+            <label for="q4">My biggest failure I'd like to share is:<?php echo $view->errq4 ;?></label>
+            <input type="text" class="form-control" name="q4" id="q4" value="<?php echo $view->q4 ?>">
+            <label for="q5">If I could be any person I would be:<?php echo $view->errq5 ;?></label>
+            <input type="text" class="form-control" name="q5" id="q5" value="<?php echo $view->q5 ?>">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="profilePic">
+            <img class="imagePreview" id="preview" src="<?php echo $view->image ?>"/>
+            <p>ADD PICTURE <?php echo $view->errUpload; ?>
+                <input type="file" name="fileToUpload" id="fileUpload" onchange="previewImage(this);">
+                <input id="addUser" class="btn btn-block btn-large btn-success  green_btn"
+                       type="submit" value="UPDATE" name="editUser">
+            </p>
+        </div>
+    </div>
+</form>
+<!--        </div>-->
+<!--Navin's modified code for add user ends-->
+<?php require_once('templates/footer.phtml') ?>
+
